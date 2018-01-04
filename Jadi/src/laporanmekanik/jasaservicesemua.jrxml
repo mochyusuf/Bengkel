@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" 
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports 
+              http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" 
+              pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" 
+              leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" 
+              uuid="01a2d3df-cba2-419c-9fd7-e2793b049c76">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from jasa_service]]>
+	</queryString>
+	<field name="id_service" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_service" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="biaya_service" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="id_service_1" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{id_service}]]></variableExpression>
+	</variable>
+	<variable name="biaya_service_1" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{biaya_service}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="131" splitType="Stretch">
+			<staticText>
+				<reportElement x="134" y="10" width="372" height="78" uuid="18d1dc58-1361-4fa0-8201-40e56cf1c1eb"/>
+				<textElement textAlignment="Justified">
+					<font size="48"/>
+				</textElement>
+				<text><![CDATA[DEDI MOTOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="255" y="106" width="139" height="20" uuid="723a90f7-c77f-4e71-80a5-df7e7e6bf238"/>
+				<text><![CDATA[Data Jasa Service Semua]]></text>
+			</staticText>
+			<image>
+				<reportElement x="14" y="10" width="89" height="79" uuid="505e571b-c953-4c31-acf4-8d9cec82c469"/>
+				<imageExpression><![CDATA["D:\\Campus\\Semester 6 (N)\\Manajemen Proyek Perangkat Lunak (UTS)\\PJN .05\\Bengkel\\src\\bengkel\\Z - .z1.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="3" y="0" width="100" height="20" uuid="70a55a79-c1a7-4a34-bff4-3bc54b9da4e2"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="103" y="0" width="100" height="20" uuid="d622cc02-b880-474b-87b4-c769c5499883"/>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="203" y="0" width="100" height="20" uuid="528f4911-9378-471a-aaaf-2c91b87e47fe"/>
+				<text><![CDATA[Biaya]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="3" y="0" width="100" height="20" uuid="c6047fdd-b17f-4534-9357-0ae1a0fd0645"/>
+				<textFieldExpression><![CDATA[$F{id_service}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="103" y="0" width="100" height="20" uuid="cb74f60c-77b2-429d-bf38-0c1e9f662a89"/>
+				<textFieldExpression><![CDATA[$F{nama_service}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="203" y="0" width="100" height="20" uuid="c4e43bb1-a3f2-45e0-99aa-2dfa2cabd665"/>
+				<textFieldExpression><![CDATA[$F{biaya_service}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="76" splitType="Stretch">
+			<staticText>
+				<reportElement x="466" y="19" width="100" height="20" uuid="932da319-a411-49fc-8f61-b32fa6c290f0"/>
+				<text><![CDATA[Total ID Service]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="467" y="39" width="100" height="20" uuid="0e91e746-e656-4376-ac21-a05bb82b31b1"/>
+				<text><![CDATA[Total Biaya]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="590" y="19" width="100" height="20" uuid="b35ae2f3-9f33-43e0-b015-3fe797565195"/>
+				<textFieldExpression><![CDATA[$V{id_service_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="590" y="39" width="100" height="20" uuid="bc8a813d-7dce-4ac9-acb2-7228e9dc33e6"/>
+				<textFieldExpression><![CDATA[$V{biaya_service_1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

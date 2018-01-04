@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="1190" pageHeight="842" orientation="Landscape" columnWidth="1150" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9ddcd396-4d1f-498f-9a02-bc55b7699360">
+	<property name="ireport.zoom" value="0.7513148009015777"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="satuan_barang" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from barang where satuan = $P{satuan_barang} AND (id_barang!='IDB0000000000')]]>
+	</queryString>
+	<field name="id_barang" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_barang" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kategori_barang" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kualitas" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="merk" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="harga_beli" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="harga_jual" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="warna" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="stock" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="satuan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_supplier" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tanggal_terima" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="selisih" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="id_barang_1" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{id_barang}]]></variableExpression>
+	</variable>
+	<variable name="harga_beli_1" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{harga_beli}]]></variableExpression>
+	</variable>
+	<variable name="harga_jual_1" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{harga_jual}]]></variableExpression>
+	</variable>
+	<variable name="stock_1" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{stock}]]></variableExpression>
+	</variable>
+	<variable name="selisih_1" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{selisih}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="171" splitType="Stretch">
+			<staticText>
+				<reportElement x="125" y="0" width="372" height="78" uuid="b4525534-56b1-4a97-9420-c4f4f3ea4353"/>
+				<textElement textAlignment="Justified">
+					<font size="48"/>
+				</textElement>
+				<text><![CDATA[DEDI MOTOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="425" y="96" width="100" height="20" uuid="946909a1-c697-4c95-8b1c-8a501c188416"/>
+				<text><![CDATA[Satuan Barang]]></text>
+			</staticText>
+			<image>
+				<reportElement x="5" y="0" width="89" height="79" uuid="0b0b312d-2570-41d0-803c-873661ca6ce2"/>
+				<imageExpression><![CDATA["D:\\Campus\\Semester 6 (N)\\Manajemen Proyek Perangkat Lunak (UTS)\\PJN .05\\Bengkel\\src\\bengkel\\Z - .z1.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="246" y="96" width="139" height="20" uuid="1f46ce57-2a37-45b7-a354-8b51ee117dc9"/>
+				<text><![CDATA[Data Barang ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="536" y="96" width="100" height="20" uuid="47c50cf6-8951-423d-867e-212ce85074cb"/>
+				<textFieldExpression><![CDATA[$P{satuan_barang}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<staticText>
+				<reportElement x="100" y="0" width="100" height="20" uuid="1d544cfd-5276-49aa-9c01-eead65ae04ca"/>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="940" y="0" width="100" height="20" uuid="be041e30-ee41-4c23-bd98-5d8249e0cbdd"/>
+				<text><![CDATA[Selisih]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="0" width="62" height="20" uuid="382da4e4-cc07-47ac-be78-5481c1ab54c1"/>
+				<text><![CDATA[Harga Beli]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="740" y="0" width="100" height="20" uuid="7a466d2d-d2d0-44d3-98c5-180b0f3c1b0b"/>
+				<text><![CDATA[ID Supplier]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="840" y="0" width="100" height="20" uuid="3353d2bc-4a19-4d7c-be46-7bd546b83c14"/>
+				<text><![CDATA[Tanggal Terima]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="482" y="0" width="69" height="20" uuid="aaee2887-cc8b-43a0-875c-3dde6c341cad"/>
+				<text><![CDATA[Harga Jual]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="0" width="78" height="20" uuid="97efe25d-c337-45e8-9202-3ecb94f99362"/>
+				<text><![CDATA[Kategori]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="612" y="0" width="59" height="20" uuid="be63fe25-f90d-4af2-83d3-d10b94667b99"/>
+				<text><![CDATA[Stock]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="0" width="71" height="20" uuid="ad0a4e1c-0904-47bb-a79c-ec72d5fb02f7"/>
+				<text><![CDATA[Kualitas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="349" y="0" width="71" height="20" uuid="81ecaaa3-8fd8-4da6-a179-c8e7c200ae86"/>
+				<text><![CDATA[Merk]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="551" y="0" width="61" height="20" uuid="e933a152-51e5-496d-a5b8-1aba074bc7c6"/>
+				<text><![CDATA[Warna]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="f053d354-c01b-406f-91aa-5bd87c2c642a"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="671" y="0" width="69" height="20" uuid="b8e51925-5588-4676-9923-de52439e5d2a"/>
+				<text><![CDATA[Satuan]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="278" y="0" width="71" height="20" uuid="91b8055c-a48b-4fb5-809c-13ad7604f60b"/>
+				<textFieldExpression><![CDATA[$F{kualitas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="551" y="0" width="61" height="20" uuid="9b8b776f-4cd0-446c-8bf2-1336818c56d2"/>
+				<textFieldExpression><![CDATA[$F{warna}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="349" y="0" width="71" height="20" uuid="e750e760-d8ec-490f-ae9b-316e2dfa9156"/>
+				<textFieldExpression><![CDATA[$F{merk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="78" height="20" uuid="295f4251-90e7-42bc-96d8-36253e09385c"/>
+				<textFieldExpression><![CDATA[$F{kategori_barang}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy HH.mm.ss">
+				<reportElement x="840" y="0" width="100" height="20" uuid="2fcc7c9c-4a5f-424e-a1ab-a1d5bd31676e"/>
+				<textFieldExpression><![CDATA[$F{tanggal_terima}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="612" y="0" width="59" height="20" uuid="aef3d669-e9c6-4fc9-8041-9f4103c80a74"/>
+				<textFieldExpression><![CDATA[$F{stock}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="0790d6f9-7b49-47d1-8bd7-d1c1ee13a839"/>
+				<textFieldExpression><![CDATA[$F{id_barang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="482" y="0" width="69" height="20" uuid="22dd564d-3155-45d3-9ffa-d3c836e7417e"/>
+				<textFieldExpression><![CDATA[$F{harga_jual}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="0" width="62" height="20" uuid="eb5a849a-b166-4e52-be26-89004305e1c5"/>
+				<textFieldExpression><![CDATA[$F{harga_beli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="100" height="20" uuid="1586d652-f741-4b94-be65-5566d0aa0d04"/>
+				<textFieldExpression><![CDATA[$F{nama_barang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="940" y="0" width="100" height="20" uuid="9024e086-2322-4bee-b0dc-2fad859648ac"/>
+				<textFieldExpression><![CDATA[$F{selisih}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="740" y="0" width="100" height="20" uuid="153eb364-d94f-4f54-b6f7-72b1d06b64fd"/>
+				<textFieldExpression><![CDATA[$F{id_supplier}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="671" y="0" width="69" height="20" uuid="3c0b0518-3cb6-40c2-abd6-e9703aeeb6a5"/>
+				<textFieldExpression><![CDATA[$F{satuan}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="165" splitType="Stretch">
+			<staticText>
+				<reportElement x="796" y="89" width="100" height="20" uuid="62ad4633-4feb-4576-a235-6e33ab6ee037"/>
+				<text><![CDATA[Total Harga Jual]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="796" y="109" width="100" height="20" uuid="d227bf63-f116-40d9-9699-70586304e978"/>
+				<text><![CDATA[Total Stock]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="796" y="129" width="100" height="20" uuid="5fa9e7f3-2ac9-416d-b512-60cefd74d95f"/>
+				<text><![CDATA[Total Selisih]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="796" y="69" width="100" height="20" uuid="4cd3bade-d3e2-40a9-8e7e-1b6b177e4c97"/>
+				<text><![CDATA[Total Harga Beli]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="796" y="49" width="100" height="20" uuid="438d666e-cee1-491a-b07a-aab071338ae1"/>
+				<text><![CDATA[Total ID Barang]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="915" y="49" width="100" height="20" uuid="29296537-5612-43b2-9894-4c7968567e82"/>
+				<textFieldExpression><![CDATA[$V{id_barang_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="915" y="69" width="100" height="20" uuid="3b198f6e-0888-483f-b99e-fd8aa47e9662"/>
+				<textFieldExpression><![CDATA[$V{harga_beli_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="915" y="89" width="100" height="20" uuid="4cae3290-3283-4626-9e57-6e5e4b6d4373"/>
+				<textFieldExpression><![CDATA[$V{harga_jual_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="915" y="109" width="100" height="20" uuid="7457cffe-975d-4c5f-b126-ed7609afcb58"/>
+				<textFieldExpression><![CDATA[$V{stock_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="915" y="129" width="100" height="20" uuid="f699580c-5428-4373-875d-a8ef651deb7f"/>
+				<textFieldExpression><![CDATA[$V{selisih_1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

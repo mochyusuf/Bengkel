@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" 
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports 
+              http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" 
+              pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" 
+              leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" 
+              uuid="01a2d3df-cba2-419c-9fd7-e2793b049c76">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="level" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from user where level = $P{level}]]>
+	</queryString>
+	<field name="id_user" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_user" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="password_user" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tempat_lahir" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tanggal_lahir" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="level" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telepon" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="alamat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="id_user_1" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{id_user}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="135" splitType="Stretch">
+			<staticText>
+				<reportElement x="129" y="11" width="372" height="78" uuid="5a537bf7-8724-4834-837b-06c698e8d75d"/>
+				<textElement textAlignment="Justified">
+					<font size="48"/>
+				</textElement>
+				<text><![CDATA[DEDI MOTOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="251" y="106" width="91" height="20" uuid="b9c80f5c-ee94-4f75-a825-506c5b49cd49"/>
+				<text><![CDATA[Data User]]></text>
+			</staticText>
+			<image>
+				<reportElement x="10" y="10" width="89" height="79" uuid="1801e5a3-197f-4404-8e14-2a8734dd3113"/>
+				<imageExpression><![CDATA["D:\\Campus\\Semester 6 (N)\\Manajemen Proyek Perangkat Lunak (UTS)\\PJN .05\\Bengkel\\src\\bengkel\\Z - .z1.jpg"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="353" y="106" width="100" height="20" uuid="95bed80f-5002-44e5-baf3-186fce10c56e"/>
+				<textFieldExpression><![CDATA[$P{level}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="5bd5e9a8-1672-4ff3-83b5-423b567157a2"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="100" height="20" uuid="ac97bef0-5266-472e-b698-373d68695a9f"/>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="0" width="100" height="20" uuid="d9fe2faa-4445-4454-a009-5dcfc146ae8d"/>
+				<text><![CDATA[Tempat Lahir]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="301" y="0" width="100" height="20" uuid="2e81c23d-807f-4641-8a1d-d9b087da7e0d"/>
+				<text><![CDATA[Tanggal lahir]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="401" y="0" width="100" height="20" uuid="787df671-8346-44c8-a462-2adc13047a45"/>
+				<text><![CDATA[Level]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="501" y="0" width="100" height="20" uuid="0bf4fc7f-208f-4e89-b72c-2453a5c52df3"/>
+				<text><![CDATA[Telepon]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="601" y="0" width="100" height="20" uuid="b2e258c3-825f-439d-bae5-dc5908f7a3f2"/>
+				<text><![CDATA[Alamat]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="936175b9-e68f-405f-8086-f8ca81249752"/>
+				<textFieldExpression><![CDATA[$F{id_user}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="100" height="20" uuid="894a8b1c-132c-4e2f-9047-c250908a3fbb"/>
+				<textFieldExpression><![CDATA[$F{nama_user}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="100" height="20" uuid="e53aa731-d607-463f-94d2-af23d72d2375"/>
+				<textFieldExpression><![CDATA[$F{tempat_lahir}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="100" height="20" uuid="ccc11892-db4d-448f-a698-76981172fd53"/>
+				<textFieldExpression><![CDATA[$F{tanggal_lahir}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="401" y="0" width="100" height="20" uuid="5e0f273a-b0d7-43f3-a664-e52b753ddb38"/>
+				<textFieldExpression><![CDATA[$F{level}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="501" y="0" width="100" height="20" uuid="2ff4af38-62dc-4472-86ce-5df5a24f576c"/>
+				<textFieldExpression><![CDATA[$F{telepon}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="601" y="0" width="201" height="20" uuid="0e5215d8-8022-4617-95ea-0a0507fa942c"/>
+				<textFieldExpression><![CDATA[$F{alamat}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="59" splitType="Stretch">
+			<staticText>
+				<reportElement x="524" y="26" width="100" height="20" uuid="15321c13-ddd9-4794-ad36-a3b61a4054fc"/>
+				<text><![CDATA[Total User]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="641" y="26" width="100" height="20" uuid="55b24385-d20e-4c8b-8d6e-8a95ef064ad2"/>
+				<textFieldExpression><![CDATA[$V{id_user_1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

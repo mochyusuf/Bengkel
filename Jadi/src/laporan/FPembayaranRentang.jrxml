@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="41ff9a52-1e98-49b6-b83a-d6be3dcd8c9e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="id_faktur_pembayaran_service_dr" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="id_faktur_pembayaran_service_sp" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT faktur_pembayaran_service.id_faktur_pembayaran_service, faktur_pembayaran_service.tanggal_bayar, faktur_pembayaran_service.biaya_service, faktur_pembayaran_service.jumlah_barang, faktur_pembayaran_service.total_bayar, faktur_pembayaran_service.dibayar_pembayaran_service, faktur_pembayaran_service.kembalian_pembayaran_service, faktur_pembayaran_service.id_user FROM faktur_pembayaran_service where (faktur_pembayaran_service.id_faktur_pembayaran_service !='FPS0000000000') AND faktur_pembayaran_service.id_faktur_pembayaran_service BETWEEN $P{id_faktur_pembayaran_service_dr} AND $P{id_faktur_pembayaran_service_sp}]]>
+	</queryString>
+	<field name="id_faktur_pembayaran_service" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tanggal_bayar" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="biaya_service" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jumlah_barang" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_bayar" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dibayar_pembayaran_service" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kembalian_pembayaran_service" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_user" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="biaya_service_1" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{biaya_service}]]></variableExpression>
+	</variable>
+	<variable name="jumlah_barang_1" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{jumlah_barang}]]></variableExpression>
+	</variable>
+	<variable name="total_bayar_1" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{total_bayar}]]></variableExpression>
+	</variable>
+	<variable name="dibayar_pembayaran_service_1" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{dibayar_pembayaran_service}]]></variableExpression>
+	</variable>
+	<variable name="kembalian_pembayaran_service_1" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{kembalian_pembayaran_service}]]></variableExpression>
+	</variable>
+	<title>
+		<band height="124" splitType="Stretch">
+			<staticText>
+				<reportElement x="131" y="0" width="372" height="78" uuid="e52df780-14d7-44a4-843f-fd473ce5d31f"/>
+				<textElement textAlignment="Justified">
+					<font size="48"/>
+				</textElement>
+				<text><![CDATA[DEDI MOTOR]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="-1" width="89" height="79" uuid="3152a7ec-c286-46e0-9665-929bf9b1f3a3"/>
+				<imageExpression><![CDATA["D:\\Campus\\Semester 6 (N)\\Manajemen Proyek Perangkat Lunak (UTS)\\PJN .05\\Bengkel\\src\\bengkel\\Z - .z1.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="89" y="93" width="150" height="20" uuid="55fbf034-d26d-4151-816c-12b5cc47779c"/>
+				<text><![CDATA[Faktur Pembayaran Service]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="444" y="93" width="100" height="20" uuid="31bfef59-374a-4cd0-8830-10f6eda0c2ec"/>
+				<text><![CDATA[Sampai]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="306" y="93" width="100" height="20" uuid="1a942022-d47b-4ad4-9d96-9037be62d6a5"/>
+				<textFieldExpression><![CDATA[$P{id_faktur_pembayaran_service_dr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="569" y="93" width="100" height="20" uuid="af832b95-143a-410c-8def-61e6d95cba56"/>
+				<textFieldExpression><![CDATA[$P{id_faktur_pembayaran_service_sp}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="41" width="100" height="20" uuid="327c529b-ac5b-4264-a8ff-56761d150b11"/>
+				<text><![CDATA[ID Faktur]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="41" width="100" height="20" uuid="c950104a-ba40-46f0-87d4-a80c840870f5"/>
+				<text><![CDATA[Tanggal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="41" width="100" height="20" uuid="ef0d9de9-7fd2-4844-9bc4-8c19e67059f1"/>
+				<text><![CDATA[Biaya Service]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="41" width="100" height="20" uuid="aaa0db7c-a4b9-4e7c-a2d6-9a90e35e4c5e"/>
+				<text><![CDATA[Banyak barang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="41" width="103" height="20" uuid="6058ec3f-4c7f-45c1-a450-8073e1176f0a"/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="503" y="41" width="97" height="20" uuid="89c92fcf-da02-4db4-b5ef-22e2f3fbccb2"/>
+				<text><![CDATA[Dibayar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="600" y="41" width="100" height="20" uuid="aeace114-0109-4637-ae15-ce600ec6f1b9"/>
+				<text><![CDATA[Kembalian]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="700" y="41" width="100" height="20" uuid="88952fd4-0715-4b83-b8fa-42dd8d041552"/>
+				<text><![CDATA[ID Kasir]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="27" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="1c9ee0e8-5293-4f77-b9d6-96b3279464d5"/>
+				<textFieldExpression><![CDATA[$F{id_faktur_pembayaran_service}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="100" height="20" uuid="6b8432a3-4578-40ba-bb4a-b4a3f12b8e8f"/>
+				<textFieldExpression><![CDATA[$F{tanggal_bayar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="100" height="20" uuid="c2c8f7c0-0219-4702-809a-5e0536f72f09"/>
+				<textFieldExpression><![CDATA[$F{biaya_service}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="100" height="20" uuid="999c0fa7-bfdd-4082-b01c-97161d45119e"/>
+				<textFieldExpression><![CDATA[$F{jumlah_barang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="0" width="103" height="20" uuid="cb63491c-4639-4959-ab2d-1e5728b48aab"/>
+				<textFieldExpression><![CDATA[$F{total_bayar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="503" y="0" width="97" height="20" uuid="c58931a1-4e84-4ec4-ad5f-16806ca7f9e0"/>
+				<textFieldExpression><![CDATA[$F{dibayar_pembayaran_service}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="600" y="0" width="100" height="20" uuid="c222c1f3-29f1-4ef1-b124-119825f4425d"/>
+				<textFieldExpression><![CDATA[$F{kembalian_pembayaran_service}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="700" y="0" width="100" height="20" uuid="a9d53f1c-e943-4e0f-ab36-c95530191926"/>
+				<textFieldExpression><![CDATA[$F{id_user}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="144" splitType="Stretch">
+			<staticText>
+				<reportElement x="544" y="10" width="100" height="20" uuid="e7691895-145c-421b-83af-e663f3aaf55d"/>
+				<text><![CDATA[Total Biaya Service]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="544" y="30" width="100" height="20" uuid="d36070e3-770e-42fc-93a6-982ca38010df"/>
+				<text><![CDATA[Total Banyak Barang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="544" y="50" width="100" height="20" uuid="f2127ca5-4f96-4964-9e95-2f5d236ac69e"/>
+				<text><![CDATA[Total Pembayaran]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="544" y="70" width="100" height="20" uuid="e86a18b1-a3c8-401e-8f90-3692d3016f17"/>
+				<text><![CDATA[Total Dibayar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="544" y="90" width="100" height="20" uuid="e84bd3af-e6a1-458e-a612-f2984cd1bf65"/>
+				<text><![CDATA[Total Kembalian]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="544" y="110" width="100" height="20" uuid="ecf77683-f4b1-487e-8c13-bcf30d5f07de"/>
+				<text><![CDATA[Total Keuntungan]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="644" y="10" width="100" height="20" uuid="f0e2e44b-d434-41e7-888a-b3206a339c1d"/>
+				<textFieldExpression><![CDATA[$V{biaya_service_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="644" y="30" width="100" height="20" uuid="d4aa6db7-0d84-42f9-9837-7f1537f12d83"/>
+				<textFieldExpression><![CDATA[$V{jumlah_barang_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="644" y="50" width="100" height="20" uuid="16fc464f-a812-4933-9710-186aa400f3db"/>
+				<textFieldExpression><![CDATA[$V{total_bayar_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="644" y="70" width="100" height="20" uuid="3cef1149-5090-441a-a361-434759651c09"/>
+				<textFieldExpression><![CDATA[$V{dibayar_pembayaran_service_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="644" y="90" width="100" height="20" uuid="e666d265-942a-4905-8701-a20e57a77268"/>
+				<textFieldExpression><![CDATA[$V{kembalian_pembayaran_service_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="644" y="110" width="100" height="20" uuid="6d9b5d8f-946b-4f18-917f-34b9388a1614"/>
+				<textFieldExpression><![CDATA[$V{dibayar_pembayaran_service_1}-$V{kembalian_pembayaran_service_1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

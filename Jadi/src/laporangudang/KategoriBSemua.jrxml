@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" 
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports 
+              http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" 
+              pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" 
+              leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" 
+              uuid="01a2d3df-cba2-419c-9fd7-e2793b049c76">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT kategori_barang.kategori_barang, kategori_barang.deskripsi FROM kategori_barang]]>
+	</queryString>
+	<field name="kategori_barang" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="deskripsi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="kategori_barang_1" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{kategori_barang}]]></variableExpression>
+	</variable>
+	<title>
+		<band height="128" splitType="Stretch">
+			<staticText>
+				<reportElement x="127" y="1" width="372" height="78" uuid="34d15661-cc75-463c-a3cd-49d94f4f1298"/>
+				<textElement textAlignment="Justified">
+					<font size="48"/>
+				</textElement>
+				<text><![CDATA[DEDI MOTOR]]></text>
+			</staticText>
+			<image>
+				<reportElement x="7" y="1" width="89" height="79" uuid="ed5487d8-7810-41cc-bff6-4e90e604f70a"/>
+				<imageExpression><![CDATA["D:\\Campus\\Semester 6 (N)\\Manajemen Proyek Perangkat Lunak (UTS)\\PJN .05\\Bengkel\\src\\bengkel\\Z - .z1.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="248" y="97" width="139" height="20" uuid="1e6ee1da-0609-4fe7-8f37-608ee715d2cd"/>
+				<text><![CDATA[Data Semua Kategori Barang]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="9" width="100" height="20" uuid="f40c7a60-c770-48e7-b3ec-001ee9e2be97"/>
+				<text><![CDATA[Kategori]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="115" y="9" width="100" height="20" uuid="a037fde2-3b98-4383-9bda-ea6c97ab8482"/>
+				<text><![CDATA[Deskripsi]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="b60c9d42-9db5-4ac3-a574-c43e6fea322d"/>
+				<textFieldExpression><![CDATA[$F{kategori_barang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="115" y="0" width="100" height="20" uuid="980229d4-9756-4818-9a91-bad03b9c41c6"/>
+				<textFieldExpression><![CDATA[$F{deskripsi}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="87" splitType="Stretch">
+			<staticText>
+				<reportElement x="294" y="28" width="125" height="20" uuid="5b6d9f21-20be-4b11-9f47-78f7362a90dd"/>
+				<text><![CDATA[Jumlah Kategori Barang]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="430" y="28" width="100" height="20" uuid="d2458ba0-a779-4be3-b21e-4621e9614c58"/>
+				<textFieldExpression><![CDATA[$V{kategori_barang_1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+	<noData>
+		<band height="50"/>
+	</noData>
+</jasperReport>

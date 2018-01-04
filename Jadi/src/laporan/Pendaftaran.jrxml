@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bb3033a4-e471-49bb-9b3e-815f54ea0c9a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="id_pendaftaran" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT * From pendaftaran WHERE `id_pendaftaran` = $P{id_pendaftaran}]]>
+	</queryString>
+	<field name="id_pendaftaran" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nomor_polisi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_pemilik" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="keluhan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kendaraan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="status" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tanggal_daftar" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_user" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pembayaran" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="129" y="0" width="372" height="78" uuid="b2351639-a4ed-4799-9996-8d636e8c5fc8"/>
+				<textElement textAlignment="Justified">
+					<font size="48"/>
+				</textElement>
+				<text><![CDATA[DEDI MOTOR]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="-1" width="89" height="79" uuid="5d26f126-3a47-4f6c-a30f-b14e6eeda42f"/>
+				<imageExpression><![CDATA["D:\\Campus\\Semester 6 (N)\\Manajemen Proyek Perangkat Lunak (UTS)\\PJN .05\\Bengkel\\src\\bengkel\\Z - .z1.jpg"]]></imageExpression>
+			</image>
+			<textField pattern="dd/MM/yyyy HH.mm.ss">
+				<reportElement x="702" y="0" width="100" height="20" uuid="e0ebd9f7-e7ae-4a44-995b-23dd4b4d8adb"/>
+				<textFieldExpression><![CDATA[$F{tanggal_daftar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="702" y="59" width="100" height="20" uuid="1ab29f5a-af38-4de7-b200-95d770cf79f8"/>
+				<textFieldExpression><![CDATA[$F{id_user}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="584" y="58" width="100" height="20" uuid="33220497-e454-4726-9573-f6d49f684b59"/>
+				<text><![CDATA[ID Kasir]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="41" width="100" height="20" uuid="0a156a0e-eba1-41b6-9959-84fc9a04dff7"/>
+				<text><![CDATA[ID Pendaftaran]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="41" width="100" height="20" uuid="4efaaa57-c1ee-4fa8-9f4b-f05e628f9441"/>
+				<text><![CDATA[Nomor Polisi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="41" width="100" height="20" uuid="610e82fc-736e-405a-9460-27b11bf327c8"/>
+				<text><![CDATA[Nama Pemilik]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="41" width="100" height="20" uuid="7874c382-c2f5-4223-8eed-bfcc5f2ebfbd"/>
+				<text><![CDATA[Keluhan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="401" y="41" width="100" height="20" uuid="84e2d2ba-46da-4cef-a23f-6348c643ff07"/>
+				<text><![CDATA[Kendaraan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="501" y="41" width="100" height="20" uuid="4efd8434-64a7-4849-8ce8-1d9864f9bb03"/>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="28" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="c42beb38-61d7-4187-b1dc-0d551d9c9e81"/>
+				<textFieldExpression><![CDATA[$F{id_pendaftaran}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="100" height="20" uuid="10a9257d-b40a-4dab-87aa-7e65bd21e3d7"/>
+				<textFieldExpression><![CDATA[$F{nomor_polisi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="100" height="20" uuid="5520f153-4b41-4cf5-af79-308aa7e10670"/>
+				<textFieldExpression><![CDATA[$F{nama_pemilik}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="100" height="20" uuid="dbb9487d-739b-4aff-afc3-9d78cf28ac66"/>
+				<textFieldExpression><![CDATA[$F{keluhan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="401" y="0" width="100" height="20" uuid="ba0a4b07-9d4b-4f23-8cbc-9bdba99d6c1f"/>
+				<textFieldExpression><![CDATA[$F{kendaraan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="501" y="0" width="100" height="20" uuid="1d3a6ef0-c71b-4bd7-978f-243a67b482d6"/>
+				<textFieldExpression><![CDATA[$F{status}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

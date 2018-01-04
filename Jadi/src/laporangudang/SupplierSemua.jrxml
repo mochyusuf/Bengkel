@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" 
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports 
+              http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" 
+              pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" 
+              leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" 
+              uuid="01a2d3df-cba2-419c-9fd7-e2793b049c76">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT supplier.id_supplier, supplier.nama_supplier, supplier.telepon_supplier, supplier.alamat FROM supplier]]>
+	</queryString>
+	<field name="id_supplier" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_supplier" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telepon_supplier" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="alamat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="id_supplier_1" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{id_supplier}]]></variableExpression>
+	</variable>
+	<title>
+		<band height="125" splitType="Stretch">
+			<staticText>
+				<reportElement x="129" y="0" width="372" height="78" uuid="98bcce0f-79d0-4e73-9e9c-7e7dcfecf8c4"/>
+				<textElement textAlignment="Justified">
+					<font size="48"/>
+				</textElement>
+				<text><![CDATA[DEDI MOTOR]]></text>
+			</staticText>
+			<image>
+				<reportElement x="9" y="0" width="89" height="79" uuid="e4bf907b-273b-4fda-a99f-e57a12bbef70"/>
+				<imageExpression><![CDATA["D:\\Campus\\Semester 6 (N)\\Manajemen Proyek Perangkat Lunak (UTS)\\PJN .05\\Bengkel\\src\\bengkel\\Z - .z1.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="245" y="94" width="139" height="20" uuid="745365ab-e103-4dbd-8069-d5b9bbf76037"/>
+				<text><![CDATA[Data Semua Supplier]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="200" y="12" width="100" height="20" uuid="dd96b3b0-8c12-473e-b7cd-61399c948bbf"/>
+				<text><![CDATA[Telepon]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="12" width="100" height="20" uuid="88ed72ba-1a41-4643-ab86-857acc741749"/>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="12" width="100" height="20" uuid="263ff3cb-9cb4-42b6-86ed-c250e65a9b35"/>
+				<text><![CDATA[ID Supplier]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="12" width="100" height="20" uuid="f561ca39-30f3-4ece-8816-b670dcdd5555"/>
+				<text><![CDATA[Alamat]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="28" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="f1894abc-9cc6-4d63-989b-0d8ca427d92d"/>
+				<textFieldExpression><![CDATA[$F{id_supplier}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="100" height="20" uuid="f2f75bf4-40a3-4d2d-a46f-a155769e6211"/>
+				<textFieldExpression><![CDATA[$F{nama_supplier}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="100" height="20" uuid="659ea857-c394-4cb2-86ec-f5ca24f95766"/>
+				<textFieldExpression><![CDATA[$F{telepon_supplier}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="100" height="20" uuid="c0eebf6c-7663-4eec-9766-1ff24c8b6fe4"/>
+				<textFieldExpression><![CDATA[$F{alamat}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="94" splitType="Stretch">
+			<staticText>
+				<reportElement x="300" y="43" width="100" height="20" uuid="ab9d7d98-870f-4ce2-8a46-5965cb1b78b0"/>
+				<text><![CDATA[Jumlah Supplier]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="417" y="43" width="100" height="20" uuid="6c4a9661-2b13-4a4a-bed3-7cc7dd3afe44"/>
+				<textFieldExpression><![CDATA[$V{id_supplier_1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

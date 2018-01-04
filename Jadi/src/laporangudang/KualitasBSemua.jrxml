@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" 
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports 
+              http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" 
+              pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" 
+              leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" 
+              uuid="01a2d3df-cba2-419c-9fd7-e2793b049c76">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from kualitas_barang]]>
+	</queryString>
+	<field name="kualitas_barang" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="deskripsi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="kualitas_barang_1" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{kualitas_barang}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="128" splitType="Stretch">
+			<image>
+				<reportElement x="6" y="0" width="89" height="79" uuid="3397cfbd-2a63-4d5f-a79e-133b9883c127"/>
+				<imageExpression><![CDATA["D:\\Campus\\Semester 6 (N)\\Manajemen Proyek Perangkat Lunak (UTS)\\PJN .05\\Bengkel\\src\\bengkel\\Z - .z1.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="247" y="96" width="139" height="20" uuid="3c30252c-813f-4e30-9f4c-3ad4957caab6"/>
+				<text><![CDATA[Data Semua Kualitas Barang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="126" y="0" width="372" height="78" uuid="1a8f928a-7b63-4e2d-9e3c-5b2aa0b6252e"/>
+				<textElement textAlignment="Justified">
+					<font size="48"/>
+				</textElement>
+				<text><![CDATA[DEDI MOTOR]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="41" width="100" height="20" uuid="6b1579c3-7f42-4b01-a0c1-9546990cf147"/>
+				<text><![CDATA[Kualitas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="41" width="100" height="20" uuid="b2cb69b4-aca3-4e0c-ad57-ea73b2cbf583"/>
+				<text><![CDATA[Deskripsi]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="a716750b-1082-4a17-94ce-35120e96e93a"/>
+				<textFieldExpression><![CDATA[$F{kualitas_barang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="100" height="20" uuid="72db0874-02b5-4298-9f95-d75c3393ac95"/>
+				<textFieldExpression><![CDATA[$F{deskripsi}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="65" splitType="Stretch">
+			<staticText>
+				<reportElement x="319" y="11" width="100" height="20" uuid="7ebeda60-2fce-4c98-ad3b-4a3af6e7df12"/>
+				<text><![CDATA[Jumlah Kualitas]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="419" y="11" width="100" height="20" uuid="60d1d4ee-36bc-41a6-855b-2e7465d424bc"/>
+				<textFieldExpression><![CDATA[$V{kualitas_barang_1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

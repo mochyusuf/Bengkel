@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="32da6a75-ee82-4ac1-bb09-e5cff57cb7c7">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from pendaftaran where (id_pendaftaran!='IDP0000000000')]]>
+	</queryString>
+	<field name="id_pendaftaran" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nomor_polisi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_pemilik" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="keluhan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kendaraan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="status" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tanggal_daftar" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_user" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pembayaran" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="131" y="0" width="372" height="78" uuid="9c889a34-b84e-4b2b-ba83-56c20a2d7ac7"/>
+				<textElement textAlignment="Justified">
+					<font size="48"/>
+				</textElement>
+				<text><![CDATA[DEDI MOTOR]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="89" height="79" uuid="47c60820-e812-43ad-8674-b02fe79bc850"/>
+				<imageExpression><![CDATA["D:\\Campus\\Semester 6 (N)\\Manajemen Proyek Perangkat Lunak (UTS)\\PJN .05\\Bengkel\\src\\bengkel\\Z - .z1.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="41" width="100" height="20" uuid="9a2fc3f0-2bfc-4874-822f-1155905016c3"/>
+				<text><![CDATA[ID Pendaftarab]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="41" width="100" height="20" uuid="da214813-65d5-440a-90e8-d57403d599ef"/>
+				<text><![CDATA[Nomor Polisi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="41" width="100" height="20" uuid="f1a510ef-6882-4524-8d08-f1840e98849f"/>
+				<text><![CDATA[Nama Pemilik]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="41" width="100" height="20" uuid="6cf41fe1-711a-49a7-b8fd-04f68c7f875f"/>
+				<text><![CDATA[Keluhan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="403" y="41" width="70" height="20" uuid="94d106a4-1e12-47ac-9ef9-173ca5bdf1ee"/>
+				<text><![CDATA[Kendaraan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="473" y="41" width="79" height="20" uuid="6def8cfd-0b5f-41e1-aeb2-b09c0f309deb"/>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="552" y="41" width="100" height="20" uuid="1d689542-7b80-4a32-a302-4a21766e44c4"/>
+				<text><![CDATA[Tanggal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="652" y="41" width="69" height="20" uuid="71461efc-c1c6-4585-b7d3-26b2392e0de0"/>
+				<text><![CDATA[ID Kasir]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="721" y="41" width="81" height="20" uuid="03817a90-445d-4f49-bcfe-c39829ba300f"/>
+				<text><![CDATA[Pembayaran]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="39737474-5df8-452e-aa4c-1d778eb514b1"/>
+				<textFieldExpression><![CDATA[$F{id_pendaftaran}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="100" height="20" uuid="2e067aac-d8e2-4434-b878-37079892eab6"/>
+				<textFieldExpression><![CDATA[$F{nomor_polisi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="100" height="20" uuid="f8a0205e-b562-40cc-971b-bd38782d15fe"/>
+				<textFieldExpression><![CDATA[$F{nama_pemilik}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="100" height="20" uuid="a7b6328c-b03f-4863-bc51-08e579107fb0"/>
+				<textFieldExpression><![CDATA[$F{keluhan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="0" width="73" height="20" uuid="a849b36a-8e55-419e-a9dd-2231cf96310d"/>
+				<textFieldExpression><![CDATA[$F{kendaraan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="472" y="0" width="80" height="20" uuid="058b6091-a252-4827-b3cb-611171fa6104"/>
+				<textFieldExpression><![CDATA[$F{status}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="552" y="0" width="100" height="20" uuid="5f697481-950a-4a01-8125-3b333dd5839f"/>
+				<textFieldExpression><![CDATA[$F{tanggal_daftar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="652" y="0" width="69" height="20" uuid="31d8628a-5969-4f90-a778-cde64def1a2d"/>
+				<textFieldExpression><![CDATA[$F{id_user}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="721" y="0" width="81" height="20" uuid="9e073fac-1349-47dc-8707-94b0581a3d97"/>
+				<textFieldExpression><![CDATA[$F{pembayaran}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="59" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
